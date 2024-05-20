@@ -55,7 +55,7 @@ func main() {
 	}()
 
 	quizDone := quiz(records)
-	quizTimer := time.Tick(*flagTimer)
+	quizTimer := time.NewTimer(*flagTimer).C
 
 	select {
 	case <-quizDone:
